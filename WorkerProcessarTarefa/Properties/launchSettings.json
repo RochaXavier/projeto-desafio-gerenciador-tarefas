@@ -1,0 +1,26 @@
+{
+  "profiles": {
+    "WorkerProcessarTarefa": {
+      "commandName": "Project",
+      "environmentVariables": {
+        "DOTNET_ENVIRONMENT": "Development"
+      },
+      "dotnetRunMessages": true
+    },
+    "Container (Dockerfile)": {
+      "commandName": "Docker",
+      "environmentVariables": {
+        "CONFIG_RABBITMQ_HOST": "rabbitmq-server",
+        "CONFIG_RABBITMQ_PORT": "5672",
+        "CONFIG_RABBITMQ_PASSWORD": "123",
+        "CONFIG_RABBITMQ_USER": "admin",
+        "CONFIG_RABBITMQ_QUEUE_NAME": "processamento-tarefas",
+        "CONFIG_MONGODB_CONNECTION_STRING": "mongodb://root:password@mongodb:27017",
+        "CONFIG_MONGODB_DATABASE_NAME": "gerenciar-tarefas",
+        "CONFIG_POLLY_RETRY_COUNT": "5",
+        "CONFIG_POLLY_RETRY_TIME": "120"
+      }
+    }
+  },
+  "$schema": "http://json.schemastore.org/launchsettings.json"
+}

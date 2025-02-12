@@ -1,0 +1,31 @@
+{
+  "profiles": {
+    "Container (Dockerfile)": {
+      "commandName": "Docker",
+      "launchBrowser": true,
+      "launchUrl": "{Scheme}://{ServiceHost}:{ServicePort}/swagger",
+      "environmentVariables": {
+        "ASPNETCORE_HTTPS_PORTS": "8081",
+        "ASPNETCORE_HTTP_PORTS": "8080",
+        "CONFIG_RABBITMQ_HOST": "rabbitmq-server",
+        "CONFIG_RABBITMQ_PORT": "5672",
+        "CONFIG_RABBITMQ_PASSWORD": "123",
+        "CONFIG_RABBITMQ_USER": "admin",
+        "CONFIG_RABBITMQ_QUEUE_NAME": "processamento-tarefas",
+        "CONFIG_MONGODB_CONNECTION_STRING": "mongodb://root:password@mongodb:27017",
+        "CONFIG_MONGODB_DATABASE_NAME": "gerenciar-tarefas"
+      },
+      "publishAllPorts": true,
+      "useSSL": false
+    }
+  },
+  "$schema": "http://json.schemastore.org/launchsettings.json",
+  "iisSettings": {
+    "windowsAuthentication": false,
+    "anonymousAuthentication": true,
+    "iisExpress": {
+      "applicationUrl": "http://localhost:60363",
+      "sslPort": 44300
+    }
+  }
+}

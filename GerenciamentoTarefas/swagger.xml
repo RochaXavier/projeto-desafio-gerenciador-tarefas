@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>GerenciamentoTarefas</name>
+    </assembly>
+    <members>
+        <member name="M:GerenciamentoTarefas.Features.Tarefas.TarefaController.CriarTarefa(GerenciamentoTarefas.Features.Tarefas.Command.CriarTarefa.Command)">
+            <summary>
+            Endpoint que possibilita a criação de uma nova tarefa
+            </summary>
+        </member>
+        <member name="M:GerenciamentoTarefas.Features.Tarefas.TarefaController.ConsultarTarefa(GerenciamentoTarefas.Features.Tarefas.Command.ConsultarTarefa.Query)">
+            <summary>
+            Endpoint para consulta de status de tarefas
+            </summary>
+        </member>
+    </members>
+</doc>

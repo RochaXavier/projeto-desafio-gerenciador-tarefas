@@ -1,0 +1,34 @@
+{
+  "profiles": {
+    "Docker Compose": {
+      "commandName": "DockerCompose",
+      "commandVersion": "1.0",
+      "serviceActions": {
+        "gerenciamentotarefas": "StartDebugging",
+        "workerprocessartarefa": "StartDebugging",
+        "mongo": "StartWithoutDebugging",
+        "rabbitmq": "StartWithoutDebugging"
+      }
+    },
+    "Mongo + Rabbit": {
+      "commandName": "DockerCompose",
+      "commandVersion": "1.0",
+      "serviceActions": {
+        "gerenciamentotarefas": "DoNotStart",
+        "mongo": "StartWithoutDebugging",
+        "rabbitmq": "StartWithoutDebugging",
+        "workerprocessartarefa": "DoNotStart"
+      }
+    },
+    "API + Worker": {
+      "commandName": "DockerCompose",
+      "commandVersion": "1.0",
+      "serviceActions": {
+        "gerenciamentotarefas": "StartDebugging",
+        "mongo": "DoNotStart",
+        "rabbitmq": "DoNotStart",
+        "workerprocessartarefa": "StartDebugging"
+      }
+    }
+  }
+}

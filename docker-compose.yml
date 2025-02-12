@@ -5,10 +5,15 @@ services:
     image: ${DOCKER_REGISTRY-}gerenciamentotarefas
     build:
       context: .
-      dockerfile: GerenciamentoTarefas/Dockerfile
+      dockerfile: GerenciamentoTarefas/Dockerfile      
+    ports:
+      - "8090:8080"
+      - "8091:8081"
     depends_on:
         - rabbitmq
         - mongo
+    env_file:
+      - .env
 
   workerprocessartarefa:
     image: ${DOCKER_REGISTRY-}workerprocessartarefa
@@ -16,8 +21,11 @@ services:
       context: .
       dockerfile: WorkerProcessarTarefa/Dockerfile
     depends_on:
-        - rabbitmq
-        - mongo
+        rabbitmq:
+         condition: service_healthy 
+    env_file:
+      - .env
+    restart: always
 
   mongo:
     image: mongo:8.0 
@@ -41,7 +49,11 @@ services:
     environment:
       - RABBITMQ_DEFAULT_USER=admin
       - RABBITMQ_DEFAULT_PASS=123
-
+    healthcheck:
+      test: ["CMD", "rabbitmqctl", "status"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
 volumes:
   mongo-data:
     driver: local

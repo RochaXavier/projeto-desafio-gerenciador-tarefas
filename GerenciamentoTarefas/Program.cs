@@ -21,6 +21,7 @@ builder.Services.AddControllers(config =>
 {
     config.JsonSerializerOptions.PropertyNameCaseInsensitive = true;
     config.JsonSerializerOptions.Converters.Add(new JsonStringEnumConverter());
+    config.JsonSerializerOptions.Encoder = System.Text.Encodings.Web.JavaScriptEncoder.UnsafeRelaxedJsonEscaping;
 });
 #endregion MVC
 
@@ -70,7 +71,14 @@ app.UseAuthorization();
 
 app.MapControllers();
 
-app.UseSwagger();
+app.UseSwagger(c =>
+{
+    c.PreSerializeFilters.Add((swaggerDoc, httpReq) =>
+    {
+        httpReq.HttpContext.Response.Headers["Content-Type"] = "application/json; charset=utf-8";
+    });
+}); 
+
 app.UseSwaggerUI(c =>
 {
     //c.SwaggerEndpoint("GerenciamentoTarefas.xml", "Aplicação de Processamento de Tarefas");

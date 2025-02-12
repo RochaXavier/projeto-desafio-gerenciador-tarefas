@@ -1,3 +1,5 @@
+# Projeto Gerencimanento de tarefas
+
 Este é o projeto/desafio para estudo das tecnologias abaixo e suas integrações:
 - .NET 8
 - RabbitMQ
@@ -10,8 +12,24 @@ A aplicação tem como objetivo simular a criação, consultas e processamentos 
 
 Para executar essa aplicação é preciso ter o docker instalado.
 
-Passo a passo para execução do projeto
+Execute o comando abaixo na raiz do projeto:
+```
+docker-compose up -d
+```
 
--- buildar e iniciar imager rabbit e mongo
+Para finalizar a aplicação execute o comando abaixo:
+```
+docker-compose down
+```
 
--- buildar e iniciar imager api e worker
+Para acompanhar a fila é possivel acessar o painel admintrativo do RabbitMQ no sequinte endereço
+[http://localhost:15672](http://localhost:15672)
+
+Documentação da API:
+[https://localhost:8091/swagger/index.html](https://localhost:8091/swagger/index.html)
+
+Para acessar a base de dados pode ser utilizada a connection string configurada no arquivo .ENV.
+
+Observação: _O arquivo .ENV na raiz do projeto possui dados sensiveis e não devem estar no repositório normalmente, deve ser configurado na medida do nescessário
+em cada projeto e só foi adicionado aqui para auxiliar o entendimento do projeto_
+

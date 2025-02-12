@@ -1,4 +1,4 @@
-# Projeto Gerencimanento de tarefas
+# Projeto Gerenciamento de tarefas
 
 Este é o projeto/desafio para estudo das tecnologias abaixo e suas integrações:
 - .NET 8
@@ -28,6 +28,6 @@ Documentação da API: [https://localhost:8091/swagger/index.html](https://local
 
 Para acessar a base de dados pode ser utilizada a connection string configurada no arquivo **.ENV**.
 
-`Observação: _O arquivo .ENV na raiz do projeto possui dados sensiveis e não devem estar no repositório normalmente, deve ser configurado na medida do nescessário
-em cada projeto e só foi adicionado aqui para auxiliar o entendimento do projeto_`
+`Observação: O arquivo .ENV na raiz do projeto possui dados sensiveis e não devem estar no repositório normalmente, deve ser configurado na medida do necessário
+em cada projeto e só foi adicionado aqui para auxiliar o entendimento do projeto`
 

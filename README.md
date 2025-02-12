@@ -14,7 +14,7 @@ Para executar essa aplicação **é preciso ter o docker instalado**.
 
 Execute o comando abaixo na raiz do projeto para iniciar a aplicação:
 ```
-docker-compose up -d
+docker-compose up --build -d
 ```
 
 Para finalizar a aplicação execute o comando abaixo:
@@ -28,6 +28,6 @@ Documentação da API: [https://localhost:8091/swagger/index.html](https://local
 
 Para acessar a base de dados pode ser utilizada a connection string configurada no arquivo **.ENV**.
 
-Observação: _O arquivo .ENV na raiz do projeto possui dados sensiveis e não devem estar no repositório normalmente, deve ser configurado na medida do nescessário
-em cada projeto e só foi adicionado aqui para auxiliar o entendimento do projeto_
+`Observação: _O arquivo .ENV na raiz do projeto possui dados sensiveis e não devem estar no repositório normalmente, deve ser configurado na medida do nescessário
+em cada projeto e só foi adicionado aqui para auxiliar o entendimento do projeto_`
 

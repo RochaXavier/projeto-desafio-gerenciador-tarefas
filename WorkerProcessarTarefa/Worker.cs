@@ -77,7 +77,7 @@ namespace WorkerProcessarTarefa
             {
                 await retry.ExecuteAsync(async () =>
                 {
-                     await Execucao(contratoTarefa, tarefa, cancellationToken);
+                    tarefa = await Execucao(contratoTarefa, tarefa, cancellationToken);
                 });
             }
             catch (Exception ex)
@@ -111,6 +111,8 @@ namespace WorkerProcessarTarefa
                 }
                 tarefa.Status = StatusTarefa.Processando;
                 await db.SaveChangesAsync(cancellationToken);
+
+                tarefa.DataUltimaAlteracao = DateTime.Now;
 
                 //TODO: AQUI IRÁ SER CHAMADA A LÓGICA PARA PROCESSAR A TAREFA DE ACORDO COM SEUS TIPOS E PARAMETROS
                 #region Bloco para simular algumas tratativas e cenários de erros
